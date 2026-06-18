@@ -1,21 +1,21 @@
 "use client";
 
 const members = [
-   
-   {
-        name: "mukul",
-        role: "member",
-        image: "/secretariat/image1.jpg",
+
+    {
+        name: "coming soon",
+        role: "",
+        image: "/secretariat/image1.png",
     },
-     {
-        name: "mukul",
-        role: "member",
-        image: "/secretariat/image1.jpg",
+    {
+        name: "coming soon",
+        role: "",
+        image: "/secretariat/image1.png",
     },
-     {
-        name: "mukul",
-        role: "member",
-        image: "/secretariat/image1.jpg",
+    {
+        name: "coming soon",
+        role: "",
+        image: "/secretariat/image1.png",
     },
     // {
     //     name: "mukul",

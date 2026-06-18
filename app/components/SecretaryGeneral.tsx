@@ -14,7 +14,7 @@ export default function SecretaryGeneral() {
 
         ```
         {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-[#07111F]/55" />
+        <div className="absolute inset-0 bg-[#07111F]/85" />
 
         {/* Content */}
         <div className="relative z-10 max-w-6xl mx-auto px-6">
