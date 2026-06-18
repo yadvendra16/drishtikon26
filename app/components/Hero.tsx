@@ -1,7 +1,7 @@
 import Countdown from "./Countdown";
 
 export default function Hero() {
-    return (<section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    return (<section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden pt-24 md:pt-0">
 
         ```
         {/* Background */}
@@ -18,10 +18,9 @@ export default function Hero() {
         {/* Content */}
         <div className="relative z-10 max-w-7xl mx-auto px-6 text-center mt-20 md:mt-24">
 
-            <p className="text-yellow-400 tracking-[0.3em]  mb-4">
+            <p className="text-yellow-400 tracking-[0.3em] mt-12 md:mt-0 mb-4">
                 सोच • संवाद • समाधान
             </p>
-
             <h1 className="text-4xl md:text-[4rem] font-bold text-yellow-400 mb-4">
                 DRISHTIKON'26
             </h1>
