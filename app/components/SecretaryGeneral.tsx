@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function SecretaryGeneral() {
     return (<section
         id="secretary-general"
@@ -12,26 +14,29 @@ export default function SecretaryGeneral() {
             }}
         />
 
-        ```
+
         {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-[#07111F]/85" />
+        <div className="absolute inset-0 bg-[#07111F]/89" />
 
         {/* Content */}
         <div className="relative z-10 max-w-6xl mx-auto px-6">
 
             <div className="grid md:grid-cols-2 gap-12 items-center">
 
-                <div>
-                    <div className="w-72 h-72 rounded-3xl bg-white/5 border border-yellow-500/20 flex items-center justify-center">
-                        <p className="text-gray-500">
-                            Founder's Photo
-                        </p>
-                    </div>
+                {/* Founder Image */}
+                <div className="flex justify-center">
+                    <Image
+                        src="/manojsir.jpg"
+                        alt="Founder"
+                        width={340}
+                        height={340}
+                        className="rounded-3xl border border-yellow-500/30 shadow-[0_0_30px_rgba(212,175,55,0.25)] object-cover"
+                    />
                 </div>
 
+                {/* Founder Message */}
                 <div>
-
-                    <h2 className="text-5xl font-bold mb-6">
+                    <h2 className="text-5xl font-bold mb-6 text-white">
                         Message from the
                         <br />
                         Founder
@@ -47,16 +52,15 @@ export default function SecretaryGeneral() {
                         We hope this experience inspires every delegate to think beyond boundaries, speak with purpose, and carry forward the spirit of positive change.
                     </p>
 
-                    <p className="text-yellow-400 font-semibold">
+                    <p className="text-yellow-400 font-semibold text-lg">
                         MANOJ DAWRANI
                     </p>
 
                     <p className="text-gray-400">
                         Founder
                         <br />
-                        Drishtikon
+                        Drishtikon MUN
                     </p>
-
                 </div>
 
             </div>

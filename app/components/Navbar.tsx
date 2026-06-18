@@ -84,7 +84,7 @@ export default function Navbar() {
                     </a>
 
                     <a
-                        href="#about"
+                        href="/comingsoon.png"
                         className="hover:text-yellow-400 transition"
                     >
                         ITINERARY

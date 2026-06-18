@@ -8,12 +8,12 @@ export default function Hero() {
         <div
             className="absolute inset-0 bg-cover bg-[center_40%]"
             style={{
-                backgroundImage: "url('/hero.jpg')",
+                backgroundImage: "url('/herobgnew.jpg')",
             }}
         />
 
         {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-[#07111F]/65" />
+        <div className="absolute inset-0 bg-[#07111F]/50" />
 
         {/* Content */}
         <div className="relative z-10 max-w-7xl mx-auto px-6 text-center mt-20 md:mt-24">
