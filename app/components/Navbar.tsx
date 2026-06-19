@@ -44,37 +44,6 @@ export default function Navbar() {
                     >
                         REGISTER
                     </a>
-
-                    <a
-                        href="https://docs.google.com/forms/d/1-Am9s3W69657v3nO4zhasfLkLyoWXGGr8jDMk8K_acM/edit"
-                        className="hover:text-yellow-400 transition"
-                    >
-                        EXECUTIVE BOARD
-                    </a>
-
-                    <a
-                        href="https://docs.google.com/forms/d/16QtT3OY_p3bqJ7AIsn5iq3s0jVybf-mHLzsJcLJNctk/edit"
-                        className="hover:text-yellow-400 transition"
-                    >
-                        CAMPUS AMBASSADOR FORM
-                    </a>
-
-
-                    <a
-                        href="#committees"
-                        className="hover:text-yellow-400 transition"
-                    >
-                        COMMITTEES
-                    </a>
-
-                    <a
-                        href="https://docs.google.com/spreadsheets/d/1O5zSYXjM8STrolygy494KglO3gMRzX7eleHlsKQO6k0/edit?gid=1136695232#gid=1136695232"
-                        target="_blank"
-                        className="hover:text-yellow-400 transition"
-                    >
-                        PORTFOLIO MATRIX
-                    </a>
-
                     <a
                         href="/brochure.pdf"
                         target="_blank"
@@ -82,13 +51,43 @@ export default function Navbar() {
                     >
                         BROCHURE
                     </a>
-
-                    {/* <a
+                    <a
+                        href="https://docs.google.com/forms/d/1-Am9s3W69657v3nO4zhasfLkLyoWXGGr8jDMk8K_acM/edit"
+                        className="hover:text-yellow-400 transition"
+                    >
+                        EXECUTIVE BOARD
+                    </a>
+                    <a
+                        href="https://docs.google.com/forms/d/16QtT3OY_p3bqJ7AIsn5iq3s0jVybf-mHLzsJcLJNctk/edit"
+                        className="hover:text-yellow-400 transition"
+                    >
+                        CAMPUS AMBASSADOR FORM
+                    </a>
+                    <a
+                        href="#committees"
+                        className="hover:text-yellow-400 transition"
+                    >
+                        COMMITTEES
+                    </a>
+                    <a
+                        href="https://docs.google.com/spreadsheets/d/1O5zSYXjM8STrolygy494KglO3gMRzX7eleHlsKQO6k0/edit?gid=1136695232#gid=1136695232"
+                        target="_blank"
+                        className="hover:text-yellow-400 transition"
+                    >
+                        PORTFOLIO MATRIX
+                    </a>
+                    <a
                         href=""
                         className="hover:text-yellow-400 transition"
                     >
                         ITINERARY
-                    </a> */}
+                    </a>
+                    <a
+                        href=""
+                        className="hover:text-yellow-400 transition"
+                    >
+                        ABOUT
+                    </a>
 
                 </div>
 
@@ -121,6 +120,13 @@ export default function Navbar() {
                         REGISTER
                     </a>
                     <a
+                        href="/brochure.pdf"
+                        target="_blank"
+                        className="hover:text-yellow-400 transition"
+                    >
+                        BROCHURE
+                    </a>
+                    <a
                         href="https://docs.google.com/forms/d/1-Am9s3W69657v3nO4zhasfLkLyoWXGGr8jDMk8K_acM/edit"
                         onClick={() => setMenuOpen(false)}
                         className="hover:text-yellow-400 transition"
@@ -151,22 +157,18 @@ export default function Navbar() {
                     >
                         PORTFOLIO MATRIX
                     </a>
-
-                    <a
-                        href="/brochure.pdf"
-                        target="_blank"
-                        onClick={() => setMenuOpen(false)}
-                        className="hover:text-yellow-400 transition"
-                    >
-                        BROCHURE
-                    </a>
-
                     <a
                         href="#about"
                         onClick={() => setMenuOpen(false)}
                         className="hover:text-yellow-400 transition"
                     >
                         ITINERARY
+                    </a>
+                    <a
+                        href=""
+                        className="hover:text-yellow-400 transition"
+                    >
+                        ABOUT
                     </a>
 
                 </div>

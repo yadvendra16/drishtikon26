@@ -16,27 +16,27 @@ export default function Hero() {
         <div className="absolute inset-0 bg-[#07111F]/50" />
 
         {/* Content */}
-        <div className="relative z-10 max-w-7xl mx-auto px-6 text-center mt-20 md:mt-24">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 text-center mt-10 md:mt-12">
 
-            <p className="text-yellow-400 tracking-[0.3em] mt-12 md:mt-0 mb-4">
+            <p className="text-yellow-400 tracking-[0.3em] mt-8 md:mt-0 mb-8">
                 सोच • संवाद • समाधान
             </p>
             <h1 className="text-4xl md:text-[4rem] font-bold text-yellow-400 mb-4">
                 DRISHTIKON'26
             </h1>
 
-            <h2 className="text-lg md:text-3xl font-medium text-gray-200 mb-6">
+            {/* <h2 className="text-lg md:text-3xl font-medium text-gray-200 mb-6">
                 सोच से संवाद
                 <br />
                 युवा से बदलाव।
-            </h2>
+            </h2> */}
 
             <p className="text-gray-300 text-lg md:text-xl mb-2">
                 Model United Nations Conference
             </p>
 
             <p className="text-gray-300 text-lg md:text-xl mb-8">
-                25–26 July • GD Goenka School, Gwalior
+                25–26 July • GD Goenka Public School, Gwalior
             </p>
 
             <div className="flex flex-col items-center gap-4 mb-10">
