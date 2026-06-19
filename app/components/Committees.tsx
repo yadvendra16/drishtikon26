@@ -10,21 +10,21 @@ const committees = [
         logo: "/aippm.png",
         fullName: "All India Political Party Meet",
         agenda:
-            "Deliberation upon the challenges posed by cross-border immigration and migration while critically evaluating the effectiveness of existing safeguards and national security mechanisms.",
+            "Deliberation upon the challenges posed by cross-border immigration, while critically evaluating the effectiveness of existing safeguards in protecting national security.",
     },
     {
         name: "BMS",
         logo: "/bms.png",
         fullName: "Bhartiya Mahila Sansad",
         agenda:
-            "Analyzing domestic violence and dowry practices in India and assessing whether existing women-centric development frameworks adequately address structural inequality, legal safeguards, societal protections, and their implementation.",
+            "Analyzing domestic violence, dowry in india and assessing whether existing women-centric development frameworks adequately address structural inequality, legal and societal safeguards, and its implementation.",
     },
     {
         name: "ICSC",
         logo: "/icsc.png",
         fullName: "International Crisis and Security Council",
         agenda:
-            "Could World War II have been prevented? Evaluating missed opportunities, failed diplomacy, and international complicity in the rise of fascism.",
+            "Could world war II have been prevented? evaluating missed opportunities, failed diplomacy, and complicity in the rise of fascist regimes and their relevance to present-day international crises.",
     },
     {
         name: "HCC",
@@ -38,7 +38,7 @@ const committees = [
         logo: "/unep.png",
         fullName: "United Nations Environment Programme",
         agenda:
-            "Deliberation on environmental security in the 21st century.",
+            "Deliberation on environmental security in the 21st century : Assessing the impact of military activities, nuclear weapons expansion on global climate goals.",
     },
     {
         name: "UNHRC",
