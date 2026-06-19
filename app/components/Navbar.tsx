@@ -83,12 +83,12 @@ export default function Navbar() {
                         BROCHURE
                     </a>
 
-                    <a
-                        href="/staytuned.png"
+                    {/* <a
+                        href=""
                         className="hover:text-yellow-400 transition"
                     >
                         ITINERARY
-                    </a>
+                    </a> */}
 
                 </div>
 
