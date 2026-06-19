@@ -17,7 +17,7 @@ const committees = [
         logo: "/bms.png",
         fullName: "Bhartiya Mahila Sansad",
         agenda:
-            "Analyzing domestic violence and dowry practices in India and assessing whether existing women-centric development frameworks adequately address structural inequities, legal safeguards, societal protections, and their implementation.",
+            "Analyzing domestic violence and dowry practices in India and assessing whether existing women-centric development frameworks adequately address structural inequality, legal safeguards, societal protections, and their implementation.",
     },
     {
         name: "ICSC",
@@ -28,7 +28,7 @@ const committees = [
     },
     {
         name: "HCC",
-        logo: "/hcc.png",
+        logo: "/hccnew.png",
         fullName: "Historical Crisis Committee",
         agenda:
             "Deliberation on determining the fate of India in 1947.",
