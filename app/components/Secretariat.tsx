@@ -203,7 +203,7 @@ export default function Secretariat() {
 
             <div className="pointer-events-none absolute inset-x-0 top-16 overflow-hidden opacity-[0.035]">
                 <p className="secretariat-ghost-text whitespace-nowrap text-[clamp(7rem,18vw,17rem)] font-black uppercase leading-none tracking-[-0.08em] text-white">
-                    THE NEW GUARD • THE NEW GUARD •
+                    DRISHTIKON MUN DRISHTIKON MUN
                 </p>
             </div>
 
