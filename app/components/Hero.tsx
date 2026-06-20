@@ -10,7 +10,7 @@ import Countdown from "./Countdown";
 
 export default function Hero() {
     return (
-        <section className="relative isolate flex min-h-[100svh] items-center overflow-hidden bg-[#050d18] pt-28 pb-12 md:pt-32 lg:pb-16">
+        <section className="relative isolate flex min-h-[100svh] w-full max-w-full items-center overflow-hidden bg-[#050d18] pb-12 pt-28 md:pt-32 lg:pb-16">
             <div
                 className="absolute inset-0 scale-105 bg-cover bg-[center_38%] opacity-70 hero-ambient-image"
                 style={{ backgroundImage: "url('/herobgnew.jpg')" }}
@@ -22,8 +22,8 @@ export default function Hero() {
             <div className="pointer-events-none absolute left-[8%] top-[18%] h-72 w-72 rounded-full bg-yellow-400/8 blur-[110px] hero-orb" />
             <div className="pointer-events-none absolute bottom-[8%] right-[12%] h-80 w-80 rounded-full bg-blue-500/8 blur-[120px] hero-orb hero-orb-delayed" />
 
-            <div className="relative z-10 mx-auto grid w-full max-w-[1480px] items-center gap-12 px-6 sm:px-8 lg:grid-cols-[minmax(0,1fr)_minmax(390px,0.78fr)] lg:gap-12 xl:grid-cols-[minmax(0,1.12fr)_minmax(430px,0.75fr)] xl:gap-16 xl:px-12">
-                <div className="max-w-3xl text-center lg:text-left">
+            <div className="relative z-10 mx-auto grid w-full min-w-0 max-w-[1480px] items-center gap-10 px-4 sm:gap-12 sm:px-8 lg:grid-cols-[minmax(0,1fr)_minmax(390px,0.78fr)] lg:gap-12 xl:grid-cols-[minmax(0,1.12fr)_minmax(430px,0.75fr)] xl:gap-16 xl:px-12">
+                <div className="min-w-0 max-w-3xl text-center lg:text-left">
                     <div className="hero-reveal hero-reveal-1 mb-7 inline-flex items-center gap-3 rounded-full border border-yellow-400/25 bg-[#08172B]/65 px-4 py-2 text-[0.65rem] font-semibold uppercase tracking-[0.22em] text-yellow-300 shadow-[0_0_30px_rgba(212,175,55,0.08)] backdrop-blur-xl sm:text-xs">
                         <span className="relative flex h-2 w-2">
                             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-yellow-300 opacity-60" />
@@ -37,7 +37,7 @@ export default function Hero() {
                         <span className="text-yellow-400">•</span> समाधान
                     </p>
 
-                    <h1 className="hero-reveal hero-reveal-3 heading-font whitespace-nowrap text-[clamp(3.5rem,10vw,7.5rem)] font-semibold leading-[0.82] tracking-[-0.06em] text-white lg:text-[4rem] xl:text-[5.2rem] 2xl:text-[6.25rem]">
+                    <h1 className="hero-reveal hero-reveal-3 heading-font whitespace-nowrap text-[10.4vw] font-semibold leading-[0.9] tracking-[-0.06em] text-white sm:text-[3.5rem] lg:text-[4rem] xl:text-[5.2rem] 2xl:text-[6.25rem]">
                         DRISHTIKON
                         <span className="ml-2 inline-block bg-gradient-to-b from-yellow-200 via-yellow-400 to-yellow-600 bg-clip-text pr-[0.1em] text-transparent sm:ml-3">
                             &apos;26
@@ -52,26 +52,26 @@ export default function Hero() {
                         </p>
                     </div>
 
-                    <div className="hero-reveal hero-reveal-5 mt-8 flex flex-wrap justify-center gap-x-8 gap-y-3 text-base font-medium text-gray-200 lg:justify-start lg:text-lg">
-                        <span className="flex items-center gap-2">
+                    <div className="hero-reveal hero-reveal-5 mt-8 flex flex-col items-center justify-center gap-3 text-[0.95rem] font-medium text-gray-200 sm:flex-row sm:flex-wrap sm:gap-x-8 lg:items-start lg:justify-start lg:text-lg">
+                        <span className="flex items-center justify-center gap-2">
                             <CalendarDays
                                 className="text-yellow-400"
                                 size={20}
                             />
                             25–26 July 2026
                         </span>
-                        <span className="flex items-center gap-2">
+                        <span className="flex items-center justify-center gap-2 text-center">
                             <MapPin className="text-yellow-400" size={20} />
                             GD Goenka Public School, Gwalior
                         </span>
                     </div>
 
-                    <div className="hero-reveal hero-reveal-6 mt-12 flex flex-col justify-center gap-3 sm:flex-row lg:mt-14 lg:justify-start">
+                    <div className="hero-reveal hero-reveal-6 mx-auto mt-10 flex w-full max-w-sm flex-col justify-center gap-3 sm:mt-12 sm:max-w-none sm:flex-row lg:mx-0 lg:mt-14 lg:justify-start">
                         <a
                             href="https://docs.google.com/forms/d/1qhPThU1QJb6vgRzKbZ3paOuMLVqO-V9X4U6Q5huuJJo/edit"
                             target="_blank"
                             rel="noreferrer"
-                            className="group inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-yellow-500 to-yellow-300 px-7 py-4 text-sm font-bold tracking-wide text-[#07111F] shadow-[0_12px_40px_rgba(234,179,8,0.2)] transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_16px_50px_rgba(234,179,8,0.32)]"
+                            className="group inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-yellow-500 to-yellow-300 px-5 py-4 text-sm font-bold tracking-wide text-[#07111F] shadow-[0_12px_40px_rgba(234,179,8,0.2)] transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_16px_50px_rgba(234,179,8,0.32)] sm:w-auto sm:px-7"
                         >
                             REGISTER NOW
                             <ArrowUpRight
@@ -84,7 +84,7 @@ export default function Hero() {
                             href="https://www.instagram.com/drishtikon.mun?igsh=MWlucTlsMTNxaDBzdw=="
                             target="_blank"
                             rel="noreferrer"
-                            className="group inline-flex items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/5 px-7 py-4 text-sm font-semibold tracking-wide text-white backdrop-blur-xl transition duration-300 hover:-translate-y-0.5 hover:border-yellow-400/50 hover:bg-yellow-400/10"
+                            className="group inline-flex w-full items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/5 px-5 py-4 text-sm font-semibold tracking-wide text-white backdrop-blur-xl transition duration-300 hover:-translate-y-0.5 hover:border-yellow-400/50 hover:bg-yellow-400/10 sm:w-auto sm:px-7"
                         >
                             <Camera size={18} />
                             FOLLOW THE JOURNEY
@@ -92,18 +92,18 @@ export default function Hero() {
                     </div>
                 </div>
 
-                <div className="hero-reveal hero-reveal-5 relative mx-auto w-full max-w-xl lg:ml-auto lg:-translate-x-5 xl:-translate-x-8">
+                <div className="hero-reveal hero-reveal-5 relative mx-auto w-full min-w-0 max-w-xl lg:ml-auto lg:-translate-x-5 xl:-translate-x-8">
                     <div className="absolute -inset-8 rounded-[3rem] bg-yellow-400/5 blur-3xl" />
-                    <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-[#08172B]/55 p-5 shadow-[0_30px_90px_rgba(0,0,0,0.4)] backdrop-blur-2xl sm:p-7">
+                    <div className="relative overflow-hidden rounded-[1.5rem] border border-white/10 bg-[#08172B]/55 p-4 shadow-[0_30px_90px_rgba(0,0,0,0.4)] backdrop-blur-2xl sm:rounded-[2rem] sm:p-7">
                         <div className="pointer-events-none absolute inset-x-12 top-0 h-px bg-gradient-to-r from-transparent via-yellow-300/80 to-transparent" />
                         <div className="pointer-events-none absolute -right-16 -top-20 h-48 w-48 rounded-full bg-yellow-400/10 blur-3xl" />
 
                         <div className="relative flex items-center justify-between border-b border-white/10 pb-5">
                             <div>
-                                <p className="text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-yellow-400">
+                                <p className="text-[0.55rem] font-semibold uppercase tracking-[0.22em] text-yellow-400 sm:text-[0.65rem] sm:tracking-[0.3em]">
                                     Conference transmission
                                 </p>
-                                <h2 className="mt-2 text-xl font-semibold text-white sm:text-2xl">
+                                <h2 className="mt-2 text-lg font-semibold text-white sm:text-2xl">
                                     The diplomacy begins in
                                 </h2>
                             </div>

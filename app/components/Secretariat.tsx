@@ -51,43 +51,43 @@ function MemberCard({
 }) {
     return (
         <article
-            className="secretariat-card group relative w-[280px] flex-none sm:w-[320px]"
+            className="secretariat-card group relative w-[42vw] min-w-[142px] max-w-[176px] flex-none sm:w-[320px] sm:max-w-none"
             onMouseMove={handleCardMove}
             onMouseLeave={resetCard}
             style={{ "--card-index": index } as CSSProperties}
         >
-            <div className="secretariat-card-glow pointer-events-none absolute inset-0 rounded-[2rem]" />
-            <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-[#0a192c]/85 p-3 shadow-[0_25px_70px_rgba(0,0,0,0.35)] backdrop-blur-xl">
+            <div className="secretariat-card-glow pointer-events-none absolute inset-0 rounded-2xl sm:rounded-[2rem]" />
+            <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-[#0a192c]/85 p-2 shadow-[0_25px_70px_rgba(0,0,0,0.35)] backdrop-blur-xl sm:rounded-[2rem] sm:p-3">
                 <div className="secretariat-card-sheen pointer-events-none absolute inset-0 z-20" />
 
-                <div className="relative h-[350px] overflow-hidden rounded-[1.45rem] bg-[radial-gradient(circle_at_50%_22%,rgba(250,204,21,0.18),transparent_38%),linear-gradient(145deg,#102640,#07111f)] sm:h-[400px]">
+                <div className="relative h-[210px] overflow-hidden rounded-xl bg-[radial-gradient(circle_at_50%_22%,rgba(250,204,21,0.18),transparent_38%),linear-gradient(145deg,#102640,#07111f)] sm:h-[400px] sm:rounded-[1.45rem]">
                     <div className="absolute inset-0 opacity-20 secretariat-card-grid" />
 
                     <Image
                         src={member.image}
                         alt=""
                         fill
-                        sizes="(max-width: 640px) 280px, 320px"
+                        sizes="(max-width: 640px) 42vw, 320px"
                         className="secretariat-portrait object-cover object-top transition duration-700 group-hover:scale-[1.04]"
                     />
 
                     <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#07111F] via-[#07111F]/60 to-transparent" />
                 </div>
 
-                <div className="relative px-2 pb-2 pt-5">
+                <div className="relative px-1 pb-1 pt-3 sm:px-2 sm:pb-2 sm:pt-5">
                     <div className="flex items-start justify-between gap-4">
                         <div>
-                            <p className="mb-1 text-[0.58rem] font-semibold uppercase tracking-[0.25em] text-yellow-400">
+                            <p className="mb-1 text-[0.42rem] font-semibold uppercase tracking-[0.16em] text-yellow-400 sm:text-[0.58rem] sm:tracking-[0.25em]">
                                 Secretariat &apos;26
                             </p>
-                            <h3 className="heading-font text-2xl font-semibold text-white">
+                            <h3 className="heading-font text-base font-semibold text-white sm:text-2xl">
                                 {member.name}
                             </h3>
-                            <p className="mt-1 text-sm text-gray-400">
+                            <p className="mt-1 text-[0.65rem] leading-4 text-gray-400 sm:text-sm">
                                 {member.role}
                             </p>
                         </div>
-                        <span className="mt-1 flex h-10 w-10 items-center justify-center rounded-full border border-yellow-400/20 bg-yellow-400/10 text-yellow-300 transition duration-300 group-hover:rotate-45 group-hover:border-yellow-300/50 group-hover:bg-yellow-400/15">
+                        <span className="mt-1 hidden h-10 w-10 items-center justify-center rounded-full border border-yellow-400/20 bg-yellow-400/10 text-yellow-300 transition duration-300 group-hover:rotate-45 group-hover:border-yellow-300/50 group-hover:bg-yellow-400/15 sm:flex">
                             <ArrowUpRight size={18} />
                         </span>
                     </div>
@@ -126,8 +126,13 @@ export default function Secretariat() {
     }, []);
 
     const scrollCards = (direction: "left" | "right") => {
-        sliderRef.current?.scrollBy({
-            left: direction === "left" ? -352 : 352,
+        const slider = sliderRef.current;
+        const firstCard = slider?.firstElementChild as HTMLElement | null;
+        const gap = slider ? parseFloat(getComputedStyle(slider).columnGap) : 0;
+        const distance = (firstCard?.offsetWidth ?? 320) + gap;
+
+        slider?.scrollBy({
+            left: direction === "left" ? -distance : distance,
             behavior: "smooth",
         });
     };
@@ -232,7 +237,7 @@ export default function Secretariat() {
             <div className="relative z-10 mx-auto max-w-[1200px]">
                 <div
                     ref={sliderRef}
-                    className="secretariat-slider flex snap-x snap-mandatory gap-6 overflow-x-auto px-6 py-8 md:gap-8 md:px-12"
+                    className="secretariat-slider flex snap-x snap-mandatory gap-3 overflow-x-auto px-3 py-6 sm:gap-8 sm:px-12 sm:py-8"
                     onPointerDown={startDrag}
                     onPointerMove={dragCards}
                     onPointerUp={stopDrag}
