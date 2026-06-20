@@ -63,7 +63,7 @@ export default function Committees() {
     return (
         <section
             id="committees"
-            className="max-w-7xl mx-auto px-6 py-24"
+            className="max-w-7xl mx-auto px-6 pt-20 pb-8 md:pt-24 md:pb-10"
         >
             <div className="text-center mb-16">
                 <p className="text-yellow-400 tracking-[0.3em] uppercase mb-4">

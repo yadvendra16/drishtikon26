@@ -39,28 +39,241 @@ body {
   font-family: var(--font-inter);
 }
 
-.marquee-container {
-  overflow: hidden;
+.hero-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: linear-gradient(to bottom, black, transparent 88%);
 }
 
-.marquee-track {
-  display: flex;
-  flex-direction: row;
-  gap: 2rem;
-  width: fit-content;
-  animation: marquee 25s linear infinite;
+.secretariat-section {
+  perspective: 1200px;
 }
 
-.marquee-track:hover {
-  animation-play-state: paused;
+.secretariat-noise {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.12'/%3E%3C/svg%3E");
+  mix-blend-mode: soft-light;
 }
 
-@keyframes marquee {
+.secretariat-gradient-text {
+  background: linear-gradient(100deg, #f8e9af 5%, #eab308 42%, #fff1ad 58%, #c98a0a 95%);
+  background-size: 220% auto;
+  background-clip: text;
+  color: transparent;
+  animation: secretariat-gold 5s linear infinite;
+}
+
+.secretariat-ghost-text {
+  animation: secretariat-ghost 24s linear infinite;
+}
+
+.secretariat-slider {
+  scrollbar-width: none;
+  overscroll-behavior-inline: contain;
+  touch-action: pan-x;
+  cursor: grab;
+  mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+}
+
+.secretariat-slider:active {
+  cursor: grabbing;
+}
+
+.secretariat-slider::-webkit-scrollbar {
+  display: none;
+}
+
+.secretariat-card {
+  --mouse-x: 50%;
+  --mouse-y: 50%;
+  --rotate-x: 0deg;
+  --rotate-y: 0deg;
+  transform: rotateX(var(--rotate-x)) rotateY(var(--rotate-y));
+  transform-style: preserve-3d;
+  transition: transform 180ms ease, filter 300ms ease;
+  will-change: transform;
+}
+
+.secretariat-card:hover {
+  filter: drop-shadow(0 28px 35px rgba(0, 0, 0, 0.4));
+  z-index: 3;
+}
+
+.secretariat-card-glow {
+  background: radial-gradient(
+    280px circle at var(--mouse-x) var(--mouse-y),
+    rgba(250, 204, 21, 0.34),
+    rgba(250, 204, 21, 0.08) 35%,
+    transparent 68%
+  );
+  opacity: 0;
+  filter: blur(14px);
+  transition: opacity 300ms ease;
+  transform: translateZ(-10px);
+}
+
+.secretariat-card:hover .secretariat-card-glow {
+  opacity: 1;
+}
+
+.secretariat-card-sheen {
+  background:
+    radial-gradient(
+      240px circle at var(--mouse-x) var(--mouse-y),
+      rgba(255, 255, 255, 0.14),
+      transparent 55%
+    ),
+    linear-gradient(
+      115deg,
+      transparent 30%,
+      rgba(250, 204, 21, 0.08) 45%,
+      rgba(96, 165, 250, 0.09) 52%,
+      transparent 67%
+    );
+  background-size: 100% 100%, 220% 100%;
+  background-position: center, 100% center;
+  opacity: 0;
+  mix-blend-mode: screen;
+  transition: opacity 300ms ease, background-position 700ms ease;
+}
+
+.secretariat-card:hover .secretariat-card-sheen {
+  background-position: center, -100% center;
+  opacity: 1;
+}
+
+.secretariat-card-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+  mask-image: linear-gradient(to bottom, black, transparent 75%);
+}
+
+.secretariat-portrait {
+  filter: saturate(0.88) contrast(1.04);
+}
+
+.secretariat-card:hover .secretariat-portrait {
+  filter: saturate(1.08) contrast(1.06);
+}
+
+@keyframes secretariat-gold {
+  to {
+    background-position: 220% center;
+  }
+}
+
+@keyframes secretariat-ghost {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.hero-ambient-image {
+  animation: hero-drift 18s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+.hero-orb {
+  animation: hero-float 8s ease-in-out infinite;
+}
+
+.hero-orb-delayed {
+  animation-delay: -4s;
+}
+
+.hero-reveal {
+  animation: hero-reveal 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.hero-reveal-1 {
+  animation-delay: 0.05s;
+}
+
+.hero-reveal-2 {
+  animation-delay: 0.12s;
+}
+
+.hero-reveal-3 {
+  animation-delay: 0.19s;
+}
+
+.hero-reveal-4 {
+  animation-delay: 0.26s;
+}
+
+.hero-reveal-5 {
+  animation-delay: 0.33s;
+}
+
+.hero-reveal-6 {
+  animation-delay: 0.4s;
+}
+
+.hero-scroll-arrow {
+  animation: hero-scroll 1.8s ease-in-out infinite;
+}
+
+@keyframes hero-reveal {
   from {
-    transform: translateX(0);
+    opacity: 0;
+    transform: translateY(24px);
+    filter: blur(6px);
   }
 
   to {
-    transform: translateX(-50%);
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes hero-drift {
+  from {
+    transform: scale(1.05) translate3d(-0.5%, -0.5%, 0);
+  }
+
+  to {
+    transform: scale(1.1) translate3d(0.5%, 0.5%, 0);
+  }
+}
+
+@keyframes hero-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(0, -18px, 0);
+  }
+}
+
+@keyframes hero-scroll {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(6px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-ambient-image,
+  .hero-orb,
+  .hero-reveal,
+  .hero-scroll-arrow,
+  .secretariat-gradient-text,
+  .secretariat-ghost-text {
+    animation: none;
+  }
+
+  .secretariat-card {
+    transform: none !important;
+    transition: none;
   }
 }

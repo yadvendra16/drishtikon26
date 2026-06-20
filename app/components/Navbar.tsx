@@ -3,13 +3,20 @@
 import Image from "next/image";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import ItineraryModal from "./ItineraryModal";
 
 export default function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);
+    const [itineraryOpen, setItineraryOpen] = useState(false);
 
+    const openItinerary = () => {
+        setMenuOpen(false);
+        setItineraryOpen(true);
+    };
 
     return (
-        <nav className="fixed top-0 left-0 w-full z-50 bg-[#08172B]/80 backdrop-blur-md border-b border-yellow-500/20">
+        <>
+            <nav className="fixed top-0 left-0 w-full z-50 bg-[#08172B]/80 backdrop-blur-md border-b border-yellow-500/20">
 
             <div className="max-w-[1400px] mx-auto px-8 py-4 flex justify-between items-center">
 
@@ -26,7 +33,7 @@ export default function Navbar() {
 
                     <div>
                         <h1 className="font-bold text-xl tracking-wide text-yellow-400">
-                            DRISHTIKON'26
+                            DRISHTIKON&apos;26
                         </h1>
 
                         <p className="text-xs text-gray-400">
@@ -76,12 +83,13 @@ export default function Navbar() {
                     >
                         PORTFOLIO MATRIX
                     </a>
-                    <a
-                        href=""
+                    <button
+                        type="button"
+                        onClick={openItinerary}
                         className="hover:text-yellow-400 transition"
                     >
                         ITINERARY
-                    </a>
+                    </button>
                     <a
                         href=""
                         className="hover:text-yellow-400 transition"
@@ -93,7 +101,10 @@ export default function Navbar() {
 
                 {/* Mobile Hamburger */}
                 <button
+                    type="button"
                     onClick={() => setMenuOpen(!menuOpen)}
+                    aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
+                    aria-expanded={menuOpen}
                     className="md:hidden text-white"
                 >
                     {menuOpen ? <X size={28} /> : <Menu size={28} />}
@@ -106,7 +117,9 @@ export default function Navbar() {
                 <div className="md:hidden fixed top-0 right-0 h-screen w-72 z-[9999] bg-[#08172B] border-l border-yellow-500/20 p-8 flex flex-col gap-6 text-white shadow-2xl">
 
                     <button
+                        type="button"
                         onClick={() => setMenuOpen(false)}
+                        aria-label="Close navigation menu"
                         className="self-end"
                     >
                         <X size={28} />
@@ -157,13 +170,13 @@ export default function Navbar() {
                     >
                         PORTFOLIO MATRIX
                     </a>
-                    <a
-                        href="#about"
-                        onClick={() => setMenuOpen(false)}
-                        className="hover:text-yellow-400 transition"
+                    <button
+                        type="button"
+                        onClick={openItinerary}
+                        className="text-left hover:text-yellow-400 transition"
                     >
                         ITINERARY
-                    </a>
+                    </button>
                     <a
                         href=""
                         className="hover:text-yellow-400 transition"
@@ -173,7 +186,13 @@ export default function Navbar() {
 
                 </div>
             )}
-        </nav>
+            </nav>
+
+            <ItineraryModal
+                isOpen={itineraryOpen}
+                onClose={() => setItineraryOpen(false)}
+            />
+        </>
     );
 
 

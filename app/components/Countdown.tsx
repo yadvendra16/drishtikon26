@@ -2,43 +2,44 @@
 
 import { useEffect, useState } from "react";
 
-export default function Countdown() {
-    const targetDate = new Date("2026-07-25T09:00:00");
+const TARGET_DATE = new Date("2026-07-25T09:00:00+05:30").getTime();
 
-    const [timeLeft, setTimeLeft] = useState({
-        days: 0,
-        hours: 0,
-        minutes: 0,
-        seconds: 0,
-    });
+const getTimeLeft = () => {
+    const difference = Math.max(0, TARGET_DATE - Date.now());
+
+    return {
+        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+        hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+        minutes: Math.floor((difference / (1000 * 60)) % 60),
+        seconds: Math.floor((difference / 1000) % 60),
+    };
+};
+
+export default function Countdown() {
+    const [timeLeft, setTimeLeft] = useState(getTimeLeft);
 
     useEffect(() => {
-        const timer = setInterval(() => {
-            const now = new Date();
-            const difference = targetDate.getTime() - now.getTime();
-
-            if (difference > 0) {
-                setTimeLeft({
-                    days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-                    hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-                    minutes: Math.floor((difference / (1000 * 60)) % 60),
-                    seconds: Math.floor((difference / 1000) % 60),
-                });
-            }
+        const timer = window.setInterval(() => {
+            setTimeLeft(getTimeLeft());
         }, 1000);
 
-        return () => clearInterval(timer);
+        return () => window.clearInterval(timer);
     }, []);
 
     return (
-        <div className="flex justify-center gap-4 mt-10 flex-wrap">
+        <div
+            className="relative mt-6 grid grid-cols-4 gap-2 sm:gap-3"
+            aria-label="Countdown to Drishtikon 2026"
+        >
             {Object.entries(timeLeft).map(([label, value]) => (
                 <div
                     key={label}
-                    className="bg-white/5 backdrop-blur-md border border-yellow-500/20 rounded-2xl px-6 py-4 min-w-[90px]"
+                    className="group rounded-2xl border border-white/10 bg-white/[0.045] px-1 py-4 text-center transition duration-300 hover:border-yellow-400/25 hover:bg-yellow-400/[0.06] sm:px-3 sm:py-5"
                 >
-                    <div className="text-3xl font-bold">{value}</div>
-                    <div className="text-xs uppercase text-gray-400">
+                    <div className="font-mono text-2xl font-semibold tabular-nums text-white sm:text-3xl">
+                        {String(value).padStart(2, "0")}
+                    </div>
+                    <div className="mt-1 text-[0.52rem] font-medium uppercase tracking-[0.14em] text-gray-400 sm:text-[0.6rem] sm:tracking-[0.2em]">
                         {label}
                     </div>
                 </div>
